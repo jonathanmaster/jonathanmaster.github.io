@@ -1,0 +1,251 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
+.grid {
+    display:grid;
+    grid-template-columns: repeat(12, 1fr);
+    width: 90%;
+    max-width: 1100px;
+    height: 100%;
+    margin: auto;
+    gap: 10px;
+    overflow: hidden;
+    align-items: center;
+}
+
+.weight-400 {
+    font-weight: 400;
+}
+
+.weight-600 {
+    font-weight: 600;
+}
+
+.parrafo {
+    margin-bottom: 20px;
+}
+
+.header {
+    height: 500px;
+}
+
+.img-hero {
+    width : 100%;
+    height: auto;
+    grid-column: 7 /13;
+}
+
+.img {
+    width: 95%;
+    max-width: 400px;
+}
+
+.textos-hero {
+    grid-column: 1 / 7;
+    padding-right: 20px;
+}
+
+.textos-hero p {
+    text-align: justify;
+}
+
+.cta {
+    display: inline-block;
+    width: 130px;
+    padding: 10px 0;
+    text-align: center;
+    text-decoration: none;
+    background: #000;
+    color: #fff;
+}
+/* Header */
+
+.services {
+    height: 370px;
+    background: linear-gradient(180deg, #fff 50%, #000 50%);
+}
+
+.items {
+    grid-column: 1 / -1;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-evenly; /*lo reparte equitativamente*/
+    align-items: center;
+    flex-wrap: wrap;/*es por si un contenedor temga un ancho mas grande*/
+}
+
+.item {
+    width: 30%;
+    height: 200px;
+    padding: 20px 10px;
+    text-align: center;
+    background: #fff;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+    overflow: hidden; /*es por si se sale lo coulte*/
+}
+
+/* este selector me permite que todas las class o atributos que empiezen con far fa  */
+[class^="far fa"] {
+    font-size: 50px;
+    text-align: center;
+}
+
+.titulo-services {
+    margin: 20px 0;
+}
+
+
+/* About us */
+
+.about-us {
+    height: auto;
+    padding-bottom: 60px;
+    background: #000;
+    color: #fff;
+}
+
+.textos-about-us {
+    grid-column: 1 / -1; /*lo que hace es que va a ocupar todas las columnas*/
+    text-align: center;
+}
+
+.textos-about-us .parrafo {
+    margin-top: 10px;
+    color: #ccc;
+}
+
+.numbers {
+    grid-column: 1/-1;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.number {
+    width: 22%;
+    text-align: center;
+    font-size: 30px;
+}
+
+/* Mission */
+
+.mission {
+    padding: 80px 0;
+}
+
+.textos-mission {
+    grid-column: 7/13;
+    grid-row: 1/-1;
+    margin-bottom: 20px;
+}
+
+.img-mission {
+    grid-column: 1/7;
+    grid-row: 1/-1;
+}
+
+/* footer */
+
+footer  {
+    padding: 60px 0;
+    text-align: center;
+    background: #000;
+    color: #fff;
+}
+
+.textos-footer {
+    grid-column: 1/-1;
+    margin-bottom: 30px;
+}
+
+
+[class^="footer-item"] a{
+    color: #fff;
+    font-size: 30px;
+}
+
+[class^="footer-item"] {
+    grid-column: span 3; /*desde tu grid column avanza 3 grid column*/
+
+}
+
+@media screen and (max-width: 800px){
+    .header {
+        height: auto;
+    }
+    .grid {
+        grid-gap: 30px;
+    }
+
+    .img-hero, .textos-hero {
+        grid-column: 1/-1; /*que ocupe las 12 columns y lo mueva abajo*/
+    }
+    .img-hero {
+        text-align: center;
+    }
+    .textos-hero {
+        margin-top: 40px;
+    }
+
+    .services {
+        height: auto;
+        margin-top: 40px;
+    }
+
+    .item {
+        width: 60%;
+        height: auto;
+        margin: 40px 0;
+        padding: 40px;
+    }
+
+    .img-mission {
+        grid-column: 1/-1;
+        grid-row: 2/3;
+        text-align: center;
+    }
+
+    .textos-mission {
+        grid-column: 1/-1;
+        grid-row: 1/2;
+        align-self: center;
+    }
+
+}
+
+@media screen and (max-width: 400px) {
+    .img {
+        max-width: 170px;
+    }
+
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));/*para que se ajuste*/
+    }
+
+    .item {
+        width: 90%;
+        /* flex-shrink: 0;para que se estire y no se encoja */
+    }
+
+    .numer {
+        width: 55%;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 1px dotted #fff;
+    }
+
+    .textos-mission h3{
+        margin: 15px 0;
+    }
+
+    [class^="footer-item"]{
+        grid-column: 1/-1;
+    }
+}
